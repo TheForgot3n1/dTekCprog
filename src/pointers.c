@@ -18,6 +18,9 @@ void printlist(const int* lst){
   printf("\n");
 }
 
+/* Takes a pointer to a char, and a pointer to a memory space allocated
+  to holding a copy of the string, as well as a pointer to a count
+  variable for counting the amount of characters copied. */
 void copycodes(char *text, int *list, int *count) {
   while (*text != 0) {
     *list = (int)*text;
@@ -27,6 +30,8 @@ void copycodes(char *text, int *list, int *count) {
   }
 }
 
+// Call copycodes to copy text1 to the memory space of list1,
+// and text2 to list2
 void work() {
   copycodes(text1, list1, &count);
   copycodes(text2, list2, &count);
