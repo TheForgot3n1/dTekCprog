@@ -13,36 +13,6 @@
 
 #define COLUMNS 6
 int columnEnd;
-/*
-void print_primes(int n){
-    int[n-1] A;
-    int current = n-1;
-    int arrayCounter = 0;
-    while(current > 1)
-    {
-        if(isPrime(current))
-        {
-            A[arrayCounter] = current
-            arrayCounter ++
-        }
-        current --
-    }
-    return;
-}*/
-
-int is_prime(int n){
-    int num = n-1;
-    while(num > 1)
-    {
-        if (n % num  == 0) {
-            return 0;
-        }
-        else {
-            num = num-1;
-        }
-    }
-    return 1;
-}
 
 void print_number(int n) {
     if(columnEnd == 1)
@@ -57,6 +27,8 @@ void print_number(int n) {
     }
 }
 
+/* Print all prime numbers less than or equal to n using the Sieve of
+  Eratosthenes algorithm. */
 void print_sieves(int n) {
   columnEnd = COLUMNS;
   int primes[n];
@@ -74,18 +46,6 @@ void print_sieves(int n) {
     }
   }
   printf("\n");
-}
-
-void print_primes(int n) {
-    columnEnd = COLUMNS;
-    int current = n-1;
-    while(current > 1)
-    {
-      if (is_prime(current)) {
-        print_number(current);
-      }
-      current --;
-    }
 }
 
 // 'argc' contains the number of program arguments, and
