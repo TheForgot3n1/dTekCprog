@@ -43,18 +43,16 @@ int is_prime(int n){
 }
 
 void print_number(int n) {
-    if(is_prime(n) && columnEnd == 1)
+    if(columnEnd == 1)
     {
         printf("%10d ", n);
         printf("\n");
         columnEnd = COLUMNS;
         return;
     }
-    if (is_prime(n))
-    {
-        printf("%10d ", n);
-        columnEnd --;
-    }
+    printf("%10d ", n);
+    columnEnd --;
+
 }
 
 void print_primes(int n) {
@@ -62,8 +60,10 @@ void print_primes(int n) {
     int current = n-1;
     while(current > 1)
     {
+      if(is_prime(n)) {
         print_number(current);
         current --;
+      }
     }
 }
 

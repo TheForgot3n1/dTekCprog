@@ -23,7 +23,7 @@ void printlist(const int* lst){
   variable for counting the amount of characters copied. */
 void copycodes(char *text, int *list, int *count) {
   while (*text != 0) {
-    *list = (int)*text;
+    *list = *text;
     text++;
     list++;
     *count = *count + 1;
@@ -40,10 +40,13 @@ void work() {
 void endian_proof(const char* c){
   printf("\nEndian experiment: 0x%02x,0x%02x,0x%02x,0x%02x\n",
          (int)*c,(int)*(c+1), (int)*(c+2), (int)*(c+3));
-
 }
 
-int main(void){
+int main(void) {
+  int abc;
+  abc = 'a';
+  printf("%d\n", abc);
+
   count = 0;
   list1 = malloc(80);
   list2 = malloc(80);
