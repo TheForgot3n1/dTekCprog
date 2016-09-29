@@ -50,20 +50,20 @@ void print_number(int n) {
         columnEnd = COLUMNS;
         return;
     }
-    printf("%10d ", n);
+    printf("%10d", n);
     columnEnd --;
 
 }
 
 void print_primes(int n) {
     columnEnd = COLUMNS;
-    int current = n-1;
-    while(current > 1)
+    int current = 2;
+    while(current <= n)
     {
-      if(is_prime(n)) {
+      if(is_prime(current)) {
         print_number(current);
-        current --;
       }
+      current ++;
     }
 }
 
@@ -71,9 +71,10 @@ void print_primes(int n) {
 // 'argv' is an array of char pointers, where each
 // char pointer points to a null-terminated string.
 int main(int argc, char *argv[]){
-  if(argc == 2)
+  if(argc == 2) {
     print_primes(atoi(argv[1]));
-  else
+    printf("\n");
+  } else
     printf("Please state an integer number.\n");
   return 0;
 }
